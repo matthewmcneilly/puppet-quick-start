@@ -1,0 +1,9 @@
+# Class name  has to match module directory name
+class motd {
+  file {'/etc/motd':
+
+    ensure => file,
+    # , Used on final line as best practice
+    source => 'puppet:///modules/motd/motd',
+  }
+}

@@ -1,0 +1,14 @@
+node default {
+
+  # include the motd class
+  include motd
+
+  # ensures mmcneilly has username and password credentials on all nodes
+  user { 'mmcneilly_user':
+    name       => 'mmcneilly',
+    groups     => 'wheel',
+    managehome => true,
+    password   => '$1$gcsfzDG6$10m7NLIFndVC.R6HRhk2L1',
+    ensure     => present
+  }
+}
